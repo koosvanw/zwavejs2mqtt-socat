@@ -6,7 +6,7 @@ RUN apk add --no-cache --virtual musl-utils tini socat bash
 RUN mkdir /runwatch
 COPY runwatch/run.sh /runwatch/run.sh
 # Monitor socat
-COPY runwatch/100.socat-zwave.enabled.sh /runwatch/100.socat-zwave.enabled.sh
+COPY runwatch/100.socat-zwavejs2mqtt.enabled.sh /runwatch/100.socat-zwavejs2mqtt.enabled.sh
 # Monitor Zwavejs2mqtt
 COPY runwatch/200.zwavejs2mqtt.enabled.sh /runwatch/200.zwavejs2mqtt.enabled.sh
 RUN chmod 777 /runwatch/*.sh
