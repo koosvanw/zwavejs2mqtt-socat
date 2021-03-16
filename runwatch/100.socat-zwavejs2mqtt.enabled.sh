@@ -36,9 +36,9 @@ is-running)
         exit 1
     fi
     # stop zwavejs2mqtt if socat is not running
-    if pgrep -f "node index.js" >/dev/null 2>&1 ; then
+    if pgrep -f "node bin/www" >/dev/null 2>&1 ; then
         echo "stopping zwavejs2mqtt since socat is not running"
-        kill -9 $(pgrep -f "node index.js")
+        kill -9 $(pgrep -f "node bin/www")
     fi
     exit 0
     ;;

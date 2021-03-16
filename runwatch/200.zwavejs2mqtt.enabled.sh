@@ -22,7 +22,7 @@ describe)
 ## exit 0 = is not running
 ## exit 1 = is running
 is-running)
-    if pgrep -f "node index.js" >/dev/null 2>&1 ; then
+    if pgrep -f "node bin/www" >/dev/null 2>&1 ; then
         exit 1
     fi
     exit 0
