@@ -22,7 +22,7 @@ describe)
 ## exit 0 = is not running
 ## exit 1 = is running
 is-running)
-    if pgrep -f "node bin/www" >/dev/null 2>&1 && echo 1 || echo 0 then
+    if pgrep -f "node bin/www" >/dev/null 2>&1 && echo 1 || echo 0 ; then
         exit 1
     fi
     exit 0
@@ -30,7 +30,7 @@ is-running)
 
 start)
     echo "Starting... $BINARY" >> "$LOG_FILE"
-    if pgrep -f "socat" >/dev/null 2>&1 && echo 1 || echo 0 then
+    if pgrep -f "socat" >/dev/null 2>&1 && echo 1 || echo 0 ; then
         # socat is running
         cd /usr/src/app
         $BINARY $PARAMS 2>$LOG_FILE >$LOG_FILE &
@@ -44,12 +44,12 @@ start)
     ;;
 
 start-fail)
-    echo "Start failed! $BINARY"
+    echo "Start failed! $BINARY $PARAMS"
     ;;
 
 stop)
-    echo "Stopping... $BINARY"
-    cd /app
+    echo "Stopping... $BINARY $PARAMS"
+    cd /usr/src/app
     kill -9 $(pgrep -f "$BINARY")
     ;;
 
