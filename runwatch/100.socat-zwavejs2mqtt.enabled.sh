@@ -32,11 +32,11 @@ describe)
 ## exit 0 = is not running
 ## exit 1 = is running
 is-running)
-    if pgrep -f "$BINARY $PARAMS" >/dev/null 2>&1 ; then
+    if pgrep -f "$BINARY $PARAMS" >/dev/null 2>&1 && echo 1 || echo 0 then
         exit 1
     fi
     # stop zwavejs2mqtt if socat is not running
-    if pgrep -f "node bin/www" >/dev/null 2>&1 ; then
+    if pgrep -f "node bin/www" >/dev/null 2>&1 && echo 1 || echo 0 then
         echo "stopping zwavejs2mqtt since socat is not running"
         kill -9 $(pgrep -f "node bin/www")
     fi
