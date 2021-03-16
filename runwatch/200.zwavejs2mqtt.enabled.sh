@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-BINARY="npm"
-PARAMS="start"
+BINARY="node"
+PARAMS="bin/www"
 
 ######################################################
 
@@ -32,7 +32,7 @@ start)
     echo "Starting... $BINARY" >> "$LOG_FILE"
     if pgrep -f "socat" >/dev/null 2>&1 ; then
         # socat is running
-        cd /app
+        cd /usr/src/app
         $BINARY $PARAMS 2>$LOG_FILE >$LOG_FILE &
         sleep 5
         exit 0
