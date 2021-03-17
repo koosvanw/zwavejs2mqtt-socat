@@ -34,7 +34,7 @@ start)
         # socat is running
         cd /usr/src/app
         $BINARY $PARAMS 2>$LOG_FILE >$LOG_FILE &
-        sleep 5
+        sleep 15
         exit 0
     else
         # socat is not running
