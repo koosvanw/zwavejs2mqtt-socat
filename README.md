@@ -1,3 +1,7 @@
+# NOTE: deprecated
+I'm leaving this up for future refence, but this image is unnecessary because Zwavejs2mqtt natively supports connecting to a remote serial device over tcp. Just enter `tcp://<host-ip>:<port>` in order to connect to your remote zwave stick over tcp.
+
+
 # zwavejs2mqtt with socat for remote zwave stick
 Created this docker image as I was already using a remote zwave stick in my setup with [Home-Assistant](https://www.home-assistant.io)
 
